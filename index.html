@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rummify — The Card Game Management Platform</title>
+  <title>Rummify — Your Card Game Management Platform</title>
   <meta name="description" content="Every card game. One platform. Coming soon to rummify.ai" />
   <meta property="og:title" content="Rummify — The Card Game Management Platform" />
   <meta property="og:description" content="Every card game. One platform. Coming soon to rummify.ai" />
@@ -18,10 +18,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1.5rem;
+      padding: 2rem 2.5rem;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
       position: relative;
-      overflow: hidden;
+      overflow-x: hidden;
       text-align: center;
     }
     .bg-glow {
@@ -37,7 +37,8 @@
 
     /* ── Card Stage ── */
     .card-stage {
-      width: 360px;
+      width: 100%;
+      max-width: 420px;
       height: 145px;
       position: relative;
       margin: 0 auto 2.6rem;
@@ -45,7 +46,7 @@
     }
     .playing-card {
       position: absolute;
-      width: 72px; height: 100px;
+      width: 68px; height: 96px;
       border-radius: 8px;
       background: #fff;
       border: 1px solid #ccc;
@@ -62,24 +63,47 @@
       background: linear-gradient(145deg, #7a5500, #c49010);
       border: 2px solid rgba(255,210,80,0.2);
     }
-    .card-back::after { content: '♠'; color: rgba(255,255,255,0.1); font-size: 48px; }
-    .card-label { position: absolute; top: 6px; left: 7px; font-size: 13px; font-weight: 700; line-height: 1; color: #111; }
-    .card-center { font-size: 30px; color: #111; }
-    .card-label-bot { position: absolute; bottom: 6px; right: 7px; font-size: 13px; font-weight: 700; line-height: 1; color: #111; transform: rotate(180deg); }
+    .card-back::after { content: '♠'; color: rgba(255,255,255,0.1); font-size: 46px; }
+    .card-label { position: absolute; top: 6px; left: 7px; font-size: 12px; font-weight: 700; line-height: 1; color: #111; }
+    .card-center { font-size: 28px; color: #111; }
+    .card-label-bot { position: absolute; bottom: 6px; right: 7px; font-size: 12px; font-weight: 700; line-height: 1; color: #111; transform: rotate(180deg); }
     .rs { color: #dc2626; }
 
     /* ── Logo ── */
-    .logo-area { text-align: center; margin-bottom: 0.6rem; position: relative; z-index: 2; }
-    .logo-title { font-size: 62px; font-weight: 700; letter-spacing: -3px; color: #fff; line-height: 1; }
+    .logo-area {
+      text-align: center;
+      margin-bottom: 0.6rem;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 1rem;
+    }
+    .logo-title {
+      font-size: clamp(44px, 10vw, 62px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: #fff;
+      line-height: 1.1;
+      display: inline-block;
+      padding: 0 4px;
+    }
     .logo-title span {
       background: linear-gradient(135deg, #f5c842, #c47f0a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      padding-right: 8px;
+      margin-right: -8px;
     }
-    .logo-sub { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 5px; text-transform: uppercase; margin-top: 10px; }
+    .logo-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
 
-    /* ── Ledger Icon — sits below subtitle ── */
+    /* ── Ledger ── */
     .ledger-wrap {
       position: relative;
       z-index: 2;
@@ -88,12 +112,14 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+      flex-wrap: wrap;
+      padding: 0 1rem;
     }
-    .ledger-wrap svg { width: 28px; height: 28px; opacity: 0.7; }
+    .ledger-wrap svg { width: 26px; height: 26px; opacity: 0.65; flex-shrink: 0; }
     .ledger-label {
       font-size: 11px;
-      color: rgba(212,160,23,0.55);
-      letter-spacing: 2px;
+      color: rgba(212,160,23,0.6);
+      letter-spacing: 2.5px;
       text-transform: uppercase;
     }
 
@@ -109,13 +135,14 @@
     .tagline-wrap {
       height: 26px;
       width: 100%;
-      max-width: 560px;
+      max-width: 580px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       z-index: 2;
       margin: 0 auto 2.4rem;
+      padding: 0 1rem;
     }
     .tagline {
       font-size: 14px;
@@ -131,7 +158,7 @@
     .tagline strong { color: #f0ba30; font-weight: 500; }
 
     /* ── Form ── */
-    .form-wrap { width: 100%; max-width: 400px; margin: 0 auto; position: relative; z-index: 2; }
+    .form-wrap { width: 100%; max-width: 400px; margin: 0 auto; position: relative; z-index: 2; padding: 0 0.5rem; }
     .form-row { display: flex; gap: 7px; }
     .email-input {
       flex: 1;
@@ -145,6 +172,7 @@
       outline: none;
       transition: border-color 0.2s, background 0.2s;
       font-family: inherit;
+      min-width: 0;
     }
     .email-input::placeholder { color: rgba(255,255,255,0.2); }
     .email-input:focus { border-color: rgba(212,160,23,0.7); background: rgba(255,255,255,0.07); }
@@ -161,7 +189,7 @@
       white-space: nowrap;
       font-family: inherit;
       transition: opacity 0.2s, transform 0.1s;
-      letter-spacing: 0.2px;
+      flex-shrink: 0;
     }
     .notify-btn:hover { opacity: 0.87; }
     .notify-btn:active { transform: scale(0.97); }
@@ -177,6 +205,7 @@
       position: relative;
       z-index: 2;
       max-width: 360px;
+      padding: 0 1rem;
       line-height: 1.7;
     }
     .disclaimer em { color: rgba(240,186,48,0.4); font-style: normal; }
@@ -192,48 +221,48 @@
       letter-spacing: 4px;
     }
 
-    @media (max-width: 420px) {
-      .logo-title { font-size: 46px; }
-      .card-stage { width: 300px; height: 125px; }
-      .playing-card { width: 58px; height: 82px; }
-      .card-center { font-size: 24px; }
-      .tagline { font-size: 12px; }
+    @media (max-width: 480px) {
+      body { padding: 2rem 1.2rem; }
+      .card-stage { max-width: 320px; height: 125px; }
+      .playing-card { width: 54px; height: 78px; }
+      .card-center { font-size: 22px; }
+      .card-label, .card-label-bot { font-size: 10px; }
+      .tagline { font-size: 12px; white-space: normal; }
+      .tagline-wrap { height: 36px; }
+      .ledger-label { font-size: 10px; letter-spacing: 1.5px; }
     }
   </style>
 </head>
 <body>
   <div class="bg-glow"></div>
 
-  <!-- Card Stage -->
   <div class="card-stage" id="stage" aria-hidden="true">
-    <div class="playing-card card-back" id="b1" style="left:36px;top:25px;transform:rotate(-15deg);z-index:3;"></div>
-    <div class="playing-card card-back" id="b2" style="left:144px;top:15px;transform:rotate(-2deg);z-index:3;"></div>
-    <div class="playing-card card-back" id="b3" style="left:252px;top:25px;transform:rotate(13deg);z-index:3;"></div>
+    <div class="playing-card card-back" id="b1" style="left:30px;top:25px;transform:rotate(-15deg);z-index:3;"></div>
+    <div class="playing-card card-back" id="b2" style="left:176px;top:15px;transform:rotate(-2deg);z-index:3;"></div>
+    <div class="playing-card card-back" id="b3" style="left:322px;top:25px;transform:rotate(13deg);z-index:3;"></div>
 
-    <div class="playing-card" id="r1" style="left:0px;top:28px;transform:rotate(-20deg) scale(0);opacity:0;z-index:4;"><span class="card-label">10</span><span class="card-center">♠</span><span class="card-label-bot">10</span></div>
-    <div class="playing-card" id="r2" style="left:66px;top:14px;transform:rotate(-9deg) scale(0);opacity:0;z-index:4;"><span class="card-label">J</span><span class="card-center">♠</span><span class="card-label-bot">J</span></div>
-    <div class="playing-card" id="r3" style="left:144px;top:8px;transform:rotate(0deg) scale(0);opacity:0;z-index:4;"><span class="card-label">Q</span><span class="card-center">♠</span><span class="card-label-bot">Q</span></div>
-    <div class="playing-card" id="r4" style="left:222px;top:14px;transform:rotate(9deg) scale(0);opacity:0;z-index:4;"><span class="card-label">K</span><span class="card-center">♠</span><span class="card-label-bot">K</span></div>
-    <div class="playing-card" id="r5" style="left:288px;top:28px;transform:rotate(20deg) scale(0);opacity:0;z-index:4;"><span class="card-label">A</span><span class="card-center">♠</span><span class="card-label-bot">A</span></div>
+    <div class="playing-card" id="r1" style="left:8px;top:30px;transform:rotate(-20deg) scale(0);opacity:0;z-index:4;"><span class="card-label">10</span><span class="card-center">♠</span><span class="card-label-bot">10</span></div>
+    <div class="playing-card" id="r2" style="left:86px;top:14px;transform:rotate(-9deg) scale(0);opacity:0;z-index:4;"><span class="card-label">J</span><span class="card-center">♠</span><span class="card-label-bot">J</span></div>
+    <div class="playing-card" id="r3" style="left:176px;top:8px;transform:rotate(0deg) scale(0);opacity:0;z-index:4;"><span class="card-label">Q</span><span class="card-center">♠</span><span class="card-label-bot">Q</span></div>
+    <div class="playing-card" id="r4" style="left:266px;top:14px;transform:rotate(9deg) scale(0);opacity:0;z-index:4;"><span class="card-label">K</span><span class="card-center">♠</span><span class="card-label-bot">K</span></div>
+    <div class="playing-card" id="r5" style="left:344px;top:30px;transform:rotate(20deg) scale(0);opacity:0;z-index:4;"><span class="card-label">A</span><span class="card-center">♠</span><span class="card-label-bot">A</span></div>
 
-    <div class="playing-card" id="h1" style="left:0px;top:32px;transform:rotate(-28deg) scale(0);opacity:0;z-index:5;"><span class="card-label rs">A</span><span class="card-center rs">♥</span><span class="card-label-bot rs">A</span></div>
-    <div class="playing-card" id="h2" style="left:34px;top:16px;transform:rotate(-20deg) scale(0);opacity:0;z-index:5;"><span class="card-label">2</span><span class="card-center">♠</span><span class="card-label-bot">2</span></div>
-    <div class="playing-card" id="h3" style="left:70px;top:7px;transform:rotate(-12deg) scale(0);opacity:0;z-index:5;"><span class="card-label rs">3</span><span class="card-center rs">♦</span><span class="card-label-bot rs">3</span></div>
-    <div class="playing-card" id="h4" style="left:108px;top:2px;transform:rotate(-5deg) scale(0);opacity:0;z-index:5;"><span class="card-label rs">4</span><span class="card-center rs">♥</span><span class="card-label-bot rs">4</span></div>
-    <div class="playing-card" id="h5" style="left:144px;top:0px;transform:rotate(0deg) scale(0);opacity:0;z-index:5;"><span class="card-label">5</span><span class="card-center">♣</span><span class="card-label-bot">5</span></div>
-    <div class="playing-card" id="h6" style="left:180px;top:2px;transform:rotate(5deg) scale(0);opacity:0;z-index:5;"><span class="card-label rs">6</span><span class="card-center rs">♦</span><span class="card-label-bot rs">6</span></div>
-    <div class="playing-card" id="h7" style="left:216px;top:7px;transform:rotate(12deg) scale(0);opacity:0;z-index:5;"><span class="card-label">7</span><span class="card-center">♠</span><span class="card-label-bot">7</span></div>
-    <div class="playing-card" id="h8" style="left:252px;top:16px;transform:rotate(20deg) scale(0);opacity:0;z-index:5;"><span class="card-label rs">8</span><span class="card-center rs">♥</span><span class="card-label-bot rs">8</span></div>
-    <div class="playing-card" id="h9" style="left:288px;top:32px;transform:rotate(28deg) scale(0);opacity:0;z-index:5;"><span class="card-label">9</span><span class="card-center">♣</span><span class="card-label-bot">9</span></div>
+    <div class="playing-card" id="h1" style="left:4px;top:34px;transform:rotate(-28deg) scale(0);opacity:0;z-index:5;"><span class="card-label rs">A</span><span class="card-center rs">♥</span><span class="card-label-bot rs">A</span></div>
+    <div class="playing-card" id="h2" style="left:48px;top:16px;transform:rotate(-20deg) scale(0);opacity:0;z-index:5;"><span class="card-label">2</span><span class="card-center">♠</span><span class="card-label-bot">2</span></div>
+    <div class="playing-card" id="h3" style="left:94px;top:7px;transform:rotate(-12deg) scale(0);opacity:0;z-index:5;"><span class="card-label rs">3</span><span class="card-center rs">♦</span><span class="card-label-bot rs">3</span></div>
+    <div class="playing-card" id="h4" style="left:136px;top:2px;transform:rotate(-5deg) scale(0);opacity:0;z-index:5;"><span class="card-label rs">4</span><span class="card-center rs">♥</span><span class="card-label-bot rs">4</span></div>
+    <div class="playing-card" id="h5" style="left:176px;top:0px;transform:rotate(0deg) scale(0);opacity:0;z-index:5;"><span class="card-label">5</span><span class="card-center">♣</span><span class="card-label-bot">5</span></div>
+    <div class="playing-card" id="h6" style="left:216px;top:2px;transform:rotate(5deg) scale(0);opacity:0;z-index:5;"><span class="card-label rs">6</span><span class="card-center rs">♦</span><span class="card-label-bot rs">6</span></div>
+    <div class="playing-card" id="h7" style="left:256px;top:7px;transform:rotate(12deg) scale(0);opacity:0;z-index:5;"><span class="card-label">7</span><span class="card-center">♠</span><span class="card-label-bot">7</span></div>
+    <div class="playing-card" id="h8" style="left:298px;top:16px;transform:rotate(20deg) scale(0);opacity:0;z-index:5;"><span class="card-label rs">8</span><span class="card-center rs">♥</span><span class="card-label-bot rs">8</span></div>
+    <div class="playing-card" id="h9" style="left:344px;top:34px;transform:rotate(28deg) scale(0);opacity:0;z-index:5;"><span class="card-label">9</span><span class="card-center">♣</span><span class="card-label-bot">9</span></div>
   </div>
 
-  <!-- Logo -->
   <div class="logo-area">
     <div class="logo-title">Rumm<span>ify</span></div>
     <div class="logo-sub">The card game management platform</div>
   </div>
 
-  <!-- Ledger icon — subtle, below subtitle -->
   <div class="ledger-wrap" aria-hidden="true">
     <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="4" y="3" width="17" height="22" rx="2" fill="#1a1200" stroke="#d4a017" stroke-width="1"/>
@@ -243,12 +272,11 @@
       <line x1="11" y1="17" x2="16" y2="17" stroke="#d4a017" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
       <polyline points="16,7 17.2,8.4 19.5,6" stroke="#f0ba30" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="ledger-label">Score · Track · Manage</span>
+    <span class="ledger-label">Organize · Score · Track · Manage</span>
   </div>
 
   <div class="divider"></div>
 
-  <!-- Rotating taglines -->
   <div class="tagline-wrap">
     <div class="tagline" id="tl0">Every card game. <strong>One platform.</strong></div>
     <div class="tagline" id="tl1" style="opacity:0;">From Rummy to the river. <strong>All your card games, one place.</strong></div>
@@ -256,7 +284,6 @@
     <div class="tagline" id="tl3" style="opacity:0;">We do the grunt work <strong>for your entertainment.</strong></div>
   </div>
 
-  <!-- Form -->
   <div class="form-wrap">
     <div class="form-row">
       <input class="email-input" type="email" id="emailInput" placeholder="your@email.com" autocomplete="email" />
@@ -266,7 +293,7 @@
     <p class="form-note">No spam. Just your launch invitation.</p>
   </div>
 
-  <p class="disclaimer">Rummify doesn't gamble with your fun — <em>we just manage it.</em><br>A game logistics &amp; entertainment management platform. No wagering. Ever.</p>
+  <p class="disclaimer">Rummify doesn't gamble with your fun — <em>we just enhance it.</em><br>Game logistics &amp; entertainment platform. No wagering. Ever.</p>
 
   <div class="suit-row" aria-hidden="true">♠ ♥ ♣ ♦</div>
 
