@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Rummify</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:   #0D3B2B;
+      --green-mid:    #122E21;
+      --green-muted:  #1A3D2B;
+      --gold:         #D4AF37;
+      --gold-dim:     rgba(212,175,55,0.18);
+      --cream:        #F5F0E8;
+      --text-body:    #C8D8C2;
+      --text-muted:   #7A9E80;
+      --divider:      rgba(212,175,55,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--green-deep);
+      color: var(--text-body);
+      font-family: 'Georgia', serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--green-mid);
+      border-bottom: 1px solid var(--divider);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-mark {
+      width: 36px; height: 36px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--green-deep);
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.01em;
+    }
+
+    header span {
+      color: var(--text-muted);
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .hero {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .hero h2 {
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .hero h2 span { color: var(--gold); }
+
+    .hero .effective {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .summary-box {
+      background: var(--gold-dim);
+      border: 1px solid var(--divider);
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 32px 0;
+      font-size: 15px;
+      color: var(--cream);
+      line-height: 1.6;
+    }
+
+    section { margin-bottom: 40px; }
+
+    section h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    p { margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      padding-left: 20px;
+      margin: 8px 0 12px;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+      color: var(--text-body);
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-dim);
+    }
+    a:hover { border-bottom-color: var(--gold); }
+
+    .contact-box {
+      background: var(--green-muted);
+      border: 1px solid var(--divider);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-box p { margin-bottom: 4px; font-size: 15px; }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--divider);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    footer a { color: var(--text-muted); font-size: 13px; }
+
+    @media (max-width: 480px) {
+      .container { padding: 32px 16px 64px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">R</div>
+  <div>
+    <h1>Rummify</h1>
+    <span>by Prime Solutions</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="hero">
+    <h2>Privacy <span>Policy</span></h2>
+    <p class="effective">Effective date: June 10, 2026 &nbsp;&middot;&nbsp; Last updated: June 10, 2026</p>
+  </div>
+
+  <div class="summary-box">
+    Plain English summary: Rummify collects only what it needs to run your rummy sessions — your phone number for sign-in, the player names and scores you enter, and basic app usage data. We do not sell your data. We do not share it with advertisers. We do not store payment card details.
+  </div>
+
+  <section>
+    <h3>1. Who we are</h3>
+    <p>Rummify is operated by <strong>Prime Solutions</strong>, based in Chantilly, Virginia, USA. References to "we," "us," or "our" in this policy mean Prime Solutions.</p>
+    <p>If you have questions about this policy, contact us at <a href="mailto:privacy@rummify.ai">privacy@rummify.ai</a>.</p>
+  </section>
+
+  <section>
+    <h3>2. What we collect</h3>
+    <p><strong>Account information</strong></p>
+    <ul>
+      <li>Your mobile phone number, used solely to verify your identity via one-time password (OTP). We use Firebase Authentication to handle this — your number is stored by Google/Firebase, not on our own servers.</li>
+    </ul>
+    <p><strong>Session and game data</strong></p>
+    <ul>
+      <li>Player names you enter or scan into a session.</li>
+      <li>Scores, drops, and results you record during a game.</li>
+      <li>Session configuration (rules, buy-in amount, currency preference).</li>
+      <li>Settlement amounts calculated at session end.</li>
+    </ul>
+    <p><strong>Device and usage data</strong></p>
+    <ul>
+      <li>Basic crash and error logs to help us fix bugs.</li>
+      <li>App version and device OS version.</li>
+    </ul>
+    <p><strong>What we do NOT collect</strong></p>
+    <ul>
+      <li>Payment card numbers or bank details. All purchases go through Google Play or the Apple App Store directly.</li>
+      <li>Location data.</li>
+      <li>Contacts from your phone's address book (you type or scan names manually).</li>
+      <li>Any data from players who are not the organizer — only the organizer creates an account.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>3. How we use your data</h3>
+    <ul>
+      <li>To authenticate you and keep your session history linked to your account.</li>
+      <li>To display scores, calculate settlements, and generate session summaries.</li>
+      <li>To restore your purchase entitlements (e.g., session credits) if you reinstall the app.</li>
+      <li>To diagnose crashes and improve app stability.</li>
+    </ul>
+    <p>We do not use your data for advertising, profiling, or any purpose not listed above.</p>
+  </section>
+
+  <section>
+    <h3>4. Who we share data with</h3>
+    <p>We share data only with the services required to run the app:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> — phone authentication and crash reporting.</li>
+      <li><strong>Supabase</strong> — secure database hosting for session and player data (servers in the USA).</li>
+      <li><strong>RevenueCat</strong> — purchase and entitlement management. RevenueCat receives a hashed user ID and purchase receipt; it does not receive your phone number or game data.</li>
+      <li><strong>Anthropic Claude API</strong> — if you use the guest list scan feature, your scanned image is sent to Anthropic's API for text extraction and is not stored by Anthropic beyond the duration of the request.</li>
+    </ul>
+    <p>We do not sell data to third parties. We do not share data with advertisers.</p>
+  </section>
+
+  <section>
+    <h3>5. Data storage and security</h3>
+    <p>Your session data is stored on Supabase servers located in the United States. We use row-level security so that only you can read your own sessions and player data.</p>
+    <p>Phone authentication is handled by Google Firebase, which is SOC 2 and ISO 27001 certified.</p>
+    <p>We retain your data for as long as you have an active account. If you delete your account, your data is deleted within 30 days.</p>
+  </section>
+
+  <section>
+    <h3>6. Your rights</h3>
+    <ul>
+      <li><strong>Access</strong> — you can view all your session data directly in the app.</li>
+      <li><strong>Deletion</strong> — email us at <a href="mailto:privacy@rummify.ai">privacy@rummify.ai</a> to request deletion of your account and all associated data.</li>
+      <li><strong>Portability</strong> — contact us to request an export of your session history.</li>
+    </ul>
+    <p>If you are located in the European Economic Area or the United Kingdom, you have additional rights under GDPR/UK GDPR including the right to object to processing. Contact us to exercise those rights.</p>
+  </section>
+
+  <section>
+    <h3>7. Children</h3>
+    <p>Rummify is not directed at children under 13. We do not knowingly collect data from anyone under 13. If you believe a child has provided us with personal data, contact us at <a href="mailto:privacy@rummify.ai">privacy@rummify.ai</a> and we will delete it promptly.</p>
+  </section>
+
+  <section>
+    <h3>8. Changes to this policy</h3>
+    <p>We may update this policy when we add new features or as required by law. When we do, we will update the "Last updated" date at the top of this page. Continued use of the app after an update means you accept the revised policy.</p>
+  </section>
+
+  <section>
+    <h3>9. Contact us</h3>
+    <div class="contact-box">
+      <p><strong style="color: var(--cream);">Prime Solutions</strong></p>
+      <p>Chantilly, Virginia, USA</p>
+      <p><a href="mailto:privacy@rummify.ai">privacy@rummify.ai</a></p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Prime Solutions &nbsp;&middot;&nbsp; <a href="/terms">Terms of Service</a> &nbsp;&middot;&nbsp; <a href="/privacy">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
