@@ -1,5 +1,8 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/join/:sessionId", "destination": "/join.html" }
+  ],
   "headers": [
     {
       "source": "/.well-known/assetlinks.json",
