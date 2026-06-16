@@ -1,14 +1,17 @@
 {
   "cleanUrls": true,
-  "routes": [
+  "rewrites": [
+    { "source": "/join/:sessionId", "destination": "/join" }
+  ],
+  "headers": [
     {
-      "src": "/join/(.*)",
-      "dest": "/join.html"
-    },
-    {
-      "src": "/.well-known/assetlinks.json",
-      "headers": { "Content-Type": "application/json" },
-      "dest": "/.well-known/assetlinks.json"
+      "source": "/.well-known/assetlinks.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
     }
   ]
 }
