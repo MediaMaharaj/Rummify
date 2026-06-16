@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "ai.rummify.app",
+    "sha256_cert_fingerprints": [
+      "74:0F:66:AA:03:38:54:F8:AC:70:79:AE:CF:85:6A:CE:60:76:E9:6A:96:34:CC:88:B9:F3:2C:AF:77:F9:03:B2"
+    ]
+  }
+}]
